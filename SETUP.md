@@ -19,6 +19,7 @@
    - Require status checks: **Repo check / structure**
    Without this rule anyone can merge unreviewed work, and your review history will not count as evidence.
 4. **Issues → Labels:** keep `task`, `requirement`, `bug`; add `blocked`, `494`, `495`.
+   If the labels are missing, open Actions → "Set up labels" → Run workflow.
 5. **Set up the project board** and **link GitHub to your Teams channel**: follow the two sections below.
 6. **First pull request (everyone reviews):** fill in `README.md` (team table, links) and `TEAM_AGREEMENT.md`. Every member approves it; that approval is your signature on the team agreement.
 7. Add the team-formation documents to `docs/494/01-team-formation/`, submit on Moodle, and tag `494-team-formation-v1.0`.

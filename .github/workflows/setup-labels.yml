@@ -1,0 +1,25 @@
+name: Set up labels
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/setup-labels.yml"]
+
+permissions:
+  issues: write
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh label create task        --repo "$REPO" --color 1D5C7F --description "Work towards a milestone" --force
+          gh label create requirement --repo "$REPO" --color 2F7A4F --description "User story / requirement" --force
+          gh label create bug         --repo "$REPO" --color B23A2E --description "Does not work as specified" --force
+          gh label create blocked     --repo "$REPO" --color 9A6A00 --description "Waiting on something" --force
+          gh label create 494         --repo "$REPO" --color 5B6873 --description "CpE-494 work" --force
+          gh label create 495         --repo "$REPO" --color 5B6873 --description "CpE-495 work" --force

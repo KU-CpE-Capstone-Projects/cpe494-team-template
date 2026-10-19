@@ -1,0 +1,7 @@
+Item,Part number / model,Quantity,Unit cost (KWD),Total (KWD),Supplier / link,Status (ordered / received / borrowed from lab)
+Microcontroller with BLE,ESP32-C3 dev board,3,1.800,5.400,(supplier link),received
+PIR motion sensor,AM312 mini PIR,3,0.400,1.200,(supplier link),received
+Pressure pad,Thin-film FSR 40 mm,3,1.500,4.500,(supplier link),ordered
+Battery holder,2 x AA with switch,3,0.250,0.750,(supplier link),received
+Zone gateway,Raspberry Pi 4 (2 GB),1,0.000,0.000,Department lab,borrowed from lab
+Enclosure,3D-printed clip-on case,3,0.300,0.900,University makerspace,ordered

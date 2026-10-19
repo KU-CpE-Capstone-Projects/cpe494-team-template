@@ -12,3 +12,6 @@
 *.mov binary
 *.zip binary
 *.vsdx binary
+*.md  text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf

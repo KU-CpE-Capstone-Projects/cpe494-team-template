@@ -1,0 +1,14 @@
+* text=auto
+*.docx binary
+*.doc binary
+*.pptx binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp4 binary
+*.mov binary
+*.zip binary
+*.vsdx binary

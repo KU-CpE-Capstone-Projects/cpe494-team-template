@@ -1,0 +1,41 @@
+name: Repo check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Required files exist
+        run: |
+          missing=0
+          for f in README.md TEAM_AGREEMENT.md meetings/_TEMPLATE.md decisions/DR-00-template.md .github/PULL_REQUEST_TEMPLATE.md; do
+            if [ ! -f "$f" ]; then echo "::error file=$f::Required file is missing: $f"; missing=1; fi
+          done
+          exit $missing
+
+      - name: Placeholders still present (warning only)
+        run: |
+          for f in README.md TEAM_AGREEMENT.md; do
+            if grep -nE 'TeamXX|\[Insert|___' "$f" > /tmp/hits.txt; then
+              n=$(wc -l < /tmp/hits.txt)
+              echo "::warning file=$f::$n template placeholder(s) still to fill in (TeamXX, [Insert ...], ___)"
+            fi
+          done
+
+      - name: Meeting minutes are named YYYY-MM-DD.md (warning only)
+        run: |
+          for f in meetings/*.md; do
+            b=$(basename "$f")
+            [ "$b" = "_TEMPLATE.md" ] && continue
+            echo "$b" | grep -qE '^[0-9]{4}-[0-9]{2}-[0-9]{2}(-[a-z0-9-]+)?\.md$' || echo "::warning file=$f::Rename to YYYY-MM-DD.md"
+          done
+
+      - name: No obvious secrets or personal data files (warning only)
+        run: |
+          git ls-files | grep -iE '(^|/)\.env$|\.pem$|id_rsa|consent.*\.(pdf|jpg|png)$|recording.*\.(mp3|m4a|wav)$' && echo "::warning::Possible secret or personal-data file committed (see list above)" || true

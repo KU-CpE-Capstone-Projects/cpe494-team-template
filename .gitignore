@@ -1,0 +1,43 @@
+# Secrets: never commit
+.env
+*.pem
+*.key
+secrets/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+.vscode/
+.idea/
+
+# Office temp / lock files
+~$*.docx
+~$*.pptx
+~$*.xlsx
+.~lock.*
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Arduino / PlatformIO
+.pio/
+*.elf
+*.hex
+
+# Large data and models: store outside Git (OneDrive / Releases) and link from README
+*.h5
+*.pt
+*.onnx
+*.tflite
+datasets/raw/

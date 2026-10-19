@@ -1,0 +1,36 @@
+name: Bug
+description: Something that does not work as specified.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result (logs, screenshots)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit / hardware setup
+    validations:
+      required: true
+  - type: input
+    id: req
+    attributes:
+      label: Related requirement ID (if any)

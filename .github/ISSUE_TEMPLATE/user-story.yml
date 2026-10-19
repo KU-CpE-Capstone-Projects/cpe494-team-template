@@ -1,0 +1,47 @@
+name: User story / requirement
+description: A user-facing requirement with testable acceptance criteria.
+title: "[Story] "
+labels: ["requirement"]
+body:
+  - type: input
+    id: reqid
+    attributes:
+      label: Requirement ID
+      description: Must match the ID in your requirements chapter.
+      placeholder: FR-03
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: User story
+      value: |
+        As a ___,
+        I want ___,
+        so that ___.
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance criteria (Given / When / Then)
+      value: |
+        Given ___
+        When ___
+        Then ___ (include a measurable threshold and unit, e.g. "within 2 s")
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [Must have, Should have, Could have]
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Evidence / source
+      description: Interview code, survey question ID or paper this requirement comes from.
+    validations:
+      required: true

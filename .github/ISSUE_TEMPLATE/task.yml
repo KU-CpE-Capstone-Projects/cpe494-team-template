@@ -1,0 +1,87 @@
+name: Task
+description: A piece of work towards a deliverable (writing, research, design, build, test).
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: dropdown
+    id: deliverable
+    attributes:
+      label: Deliverable
+      description: Which official submission does this work count towards?
+      options:
+        - 494 · Team formation
+        - 494 · Concept poster + proposal
+        - 494 · Project abstract
+        - 494 · Requirements chapter + literature review
+        - 494 · PoC spec + diagrams
+        - 494 · Detailed design + Decision Records
+        - 494 · PoC demo + design committee
+        - 494 · Portfolio
+        - 495 · Close committee feedback
+        - 495 · Progress meeting
+        - 495 · Integrated prototype
+        - 495 · Test plan
+        - 495 · Usability testing
+        - 495 · Final report
+        - 495 · Final presentation + committee
+        - 495 · Poster
+        - 495 · Portfolio
+        - Not tied to a milestone (team process)
+    validations:
+      required: true
+  - type: dropdown
+    id: brief
+    attributes:
+      label: Brief
+      description: The task post (brief code) this work answers, if any.
+      options:
+        - None
+        - B1 Concept poster + SWOT
+        - B2 Proposal presentation
+        - B3 Interview kit
+        - B4 Requirements survey
+        - B5 Ethical analysis
+        - B6 Literature review
+        - B7 PoC specification
+        - B8 UML diagrams
+        - B9 Non-UML diagrams
+        - B10 Detailed design
+        - B11 Recorded PoC demo
+        - B12 Q&A prep + backup slides
+        - B13 Decision Records
+        - B14 Test plan
+        - B15 Usability test plan
+        - B16 Final report + presentation
+    validations:
+      required: true
+  - type: textarea
+    id: work
+    attributes:
+      label: What needs to be done
+      placeholder: e.g. Write section 1.1 Needs with at least 3 cited sources.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria (done when...)
+      placeholder: |
+        - [ ] Every number in the section has a citation to an opened paper
+        - [ ] Reviewed by one teammate
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: Due date
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: Also assign the issue to this person.
+      placeholder: "@username"
+    validations:
+      required: true

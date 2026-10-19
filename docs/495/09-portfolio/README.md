@@ -1,0 +1,3 @@
+# CpE-495 portfolio
+
+Do **not** commit peer evaluations (Teamwork Scoring Rubric). Submit them privately as instructed.
